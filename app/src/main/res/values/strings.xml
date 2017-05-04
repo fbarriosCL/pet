@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">pet_project</string>
+
+    <string-array name="type_array">
+        <item>Type I</item>
+        <item>Type II</item>
+        <item>Type III</item>
+    </string-array>
+
+    <string-array name="color_array">
+        <item>Color I</item>
+        <item>Color II</item>
+        <item>Color III</item>
+    </string-array>
+
+    <string-array name="race_array">
+        <item>Raza I</item>
+        <item>Raza II</item>
+        <item>Raza III</item>
+    </string-array>
+
 </resources>

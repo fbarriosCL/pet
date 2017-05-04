@@ -4,52 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.felipe.pet_project.OwnerActivity">
+    tools:context="com.example.felipe.pet_project.PetActivity">
 
-    <EditText
-        android:id="@+id/rut"
+    <Spinner
+        android:id="@+id/type_pet_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp" />
+
+    <Spinner
+        android:id="@+id/color_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/type_pet_spinner"
+        android:layout_marginTop="38dp" />
+
+    <Spinner
+        android:id="@+id/race_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/color_spinner"
+        android:layout_marginTop="49dp" />
+
+    <EditText
+        android:id="@+id/necklace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/race_spinner"
+        android:layout_marginTop="38dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Rut" />
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/rut"
-        android:layout_below="@+id/rut"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/adress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/name"
-        android:layout_below="@+id/name"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Dirección"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/telephone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/adress"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Telefono"
-        android:inputType="textPersonName" />
-
+        android:hint="Collar" />
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -67,4 +59,13 @@
         android:layout_alignStart="@+id/telephone"
         android:layout_alignTop="@+id/button"
         android:text="Limpiar" />
+
+    <Spinner
+        android:id="@+id/user_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/necklace"
+        android:layout_marginTop="39dp" />
+
 </RelativeLayout>
