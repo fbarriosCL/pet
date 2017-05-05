@@ -21,6 +21,10 @@
         <activity
             android:name=".ShowOwnerActivity"
             android:label="@string/title_activity_show_owner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowPetActivity"
+            android:label="@string/title_activity_show_pet"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

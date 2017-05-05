@@ -42,14 +42,14 @@ public class dbHelper extends SQLiteOpenHelper {
             COLUMN_RUT+" text,"+
             COLUMN_NAME+" text, "+
             COLUMN_ADDRESS+"text"+
-            COLUMN_TELEPHONE+" integer );";
+            COLUMN_TELEPHONE+" string );";
 
     private String sqlTablePet ="CREATE TABLE "+TABLE_PET+" ("+
             COLUMN_TYPE_PET+" text,"+
             COLUMN_COLOR+" text, "+
             COLUMN_RACE+ "text,"+
             COLUMN_OWNER_ID+" integer primary key autoincrement," +
-            COLUMN_NECKLACE+" integer );";
+            COLUMN_NECKLACE+" string );";
 
 
     public dbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -184,7 +184,7 @@ public class dbHelper extends SQLiteOpenHelper {
                     owner.address = cursor.getString(cursor.getColumnIndex(COLUMN_ADDRESS));
                     owner.rut = cursor.getString(cursor.getColumnIndex(COLUMN_RUT));
                     owner.name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
-                    owner.telephone = cursor.getInt(cursor.getColumnIndex(COLUMN_TELEPHONE));
+                    owner.telephone = cursor.getString(cursor.getColumnIndex(COLUMN_TELEPHONE));
                     owners.add(owner);
                 } while (cursor.moveToNext());
             }

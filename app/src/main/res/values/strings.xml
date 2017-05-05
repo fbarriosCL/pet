@@ -19,5 +19,6 @@
         <item>Raza III</item>
     </string-array>
     <string name="title_activity_show_owner">ShowOwnerActivity</string>
+    <string name="title_activity_show_pet">ShowPetActivity</string>
 
 </resources>

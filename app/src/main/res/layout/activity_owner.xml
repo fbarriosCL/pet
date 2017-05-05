@@ -38,7 +38,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Dirección"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/telephone"
@@ -48,7 +48,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Telefono"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnCreateOwner"
@@ -64,7 +64,7 @@
         android:id="@+id/btnCleanOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Limpiar"
         android:layout_alignStart="@+id/telephone"
-        android:layout_alignTop="@+id/button"
-        android:text="Limpiar" />
+        android:layout_alignBottom="@+id/btnCreateOwner" />
 </RelativeLayout>

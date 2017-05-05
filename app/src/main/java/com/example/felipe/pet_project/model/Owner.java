@@ -10,7 +10,7 @@ public class Owner implements Serializable {
     public String rut;
     public String name;
     public String address;
-    public int telephone;
+    public String telephone;
 
 
 }
