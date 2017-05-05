@@ -18,5 +18,6 @@
         <item>Raza II</item>
         <item>Raza III</item>
     </string-array>
+    <string name="title_activity_show_owner">ShowOwnerActivity</string>
 
 </resources>

@@ -51,7 +51,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCreateOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -61,7 +61,7 @@
         android:text="Enviar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCleanOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/telephone"
