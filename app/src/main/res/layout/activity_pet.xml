@@ -43,7 +43,7 @@
         android:inputType="textPersonName"
         android:hint="Collar" />
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCreatePet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -53,12 +53,14 @@
         android:text="Enviar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCleanPet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/telephone"
-        android:layout_alignTop="@+id/button"
-        android:text="Limpiar" />
+        android:text="Limpiar"
+        android:layout_alignBaseline="@+id/btnCreatePet"
+        android:layout_alignBottom="@+id/btnCreatePet"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="34dp" />
 
     <Spinner
         android:id="@+id/user_spinner"
