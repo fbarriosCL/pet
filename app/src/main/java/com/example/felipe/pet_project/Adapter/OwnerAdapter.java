@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Felipe on 06-05-17.
  */
 
-public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.ListViewHolder>  {
+public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.ListViewHolder> {
 
     Context context;
     List<Owner> dataList = new ArrayList<>();
