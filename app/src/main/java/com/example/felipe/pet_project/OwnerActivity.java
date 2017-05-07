@@ -40,7 +40,7 @@ public class OwnerActivity extends AppCompatActivity {
                 OwnerData.rut = etRut.getText().toString();
                 OwnerData.telephone = etTelephone.getText().toString();
 
-                dbHelper.insertOwner(OwnerData);
+                dbHelper.insertOwner(OwnerData, OwnerActivity.this);
 
                 Intent intent = new Intent(OwnerActivity.this, ShowOwnerActivity.class);
                 startActivity(intent);

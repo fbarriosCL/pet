@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.felipe.pet_project.model.Owner;
 import com.example.felipe.pet_project.model.Pet;
@@ -27,30 +28,18 @@ public class dbHelper extends SQLiteOpenHelper {
     private static final String TABLE_PET = "pet";
     private static final String TABLE_OWNER = "owner";
     // attributes for owner
+    private static final String _ID_OWNER = "_id";
     public static final String COLUMN_RUT = "rut";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_ADDRESS = "address";
     public static final String COLUMN_TELEPHONE = "telephone";
     // attributes for pets
+    private static final String _ID_PET = "_id";
     public static final String COLUMN_TYPE_PET = "type_pet";
     public static final String COLUMN_COLOR = "color_pet";
     public static final String COLUMN_RACE = "race_pet";
     public static final String COLUMN_NECKLACE = "necklace_pet";
     public static final String COLUMN_OWNER_ID = "owner_id";
-
-    private String sqlTableOwner = "CREATE TABLE "+TABLE_OWNER+" ("+
-            COLUMN_RUT+" text,"+
-            COLUMN_NAME+" text, "+
-            COLUMN_ADDRESS+"text"+
-            COLUMN_TELEPHONE+" string );";
-
-    private String sqlTablePet ="CREATE TABLE "+TABLE_PET+" ("+
-            COLUMN_TYPE_PET+" text,"+
-            COLUMN_COLOR+" text, "+
-            COLUMN_RACE+ "text,"+
-            COLUMN_OWNER_ID+" integer primary key autoincrement," +
-            COLUMN_NECKLACE+" string );";
-
 
     public dbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -59,8 +48,27 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(sqlTablePet);
+        String sqlTableOwner = "CREATE TABLE " + TABLE_OWNER +
+                "(" +
+                _ID_OWNER + " INTEGER PRIMARY KEY ," +
+                COLUMN_RUT + " TEXT," +
+                COLUMN_NAME + " TEXT," +
+                COLUMN_ADDRESS + " TEXT, " +
+                COLUMN_TELEPHONE + " TEXT" +
+                ")";
         db.execSQL(sqlTableOwner);
+
+        String sqlTablePet = "CREATE TABLE " + TABLE_PET +
+                "(" +
+                _ID_PET + " INTEGER PRIMARY KEY ," +
+                COLUMN_TYPE_PET + " TEXT," +
+                COLUMN_COLOR + " TEXT," +
+                COLUMN_RACE + " TEXT, " +
+                COLUMN_OWNER_ID + " TEXT, " +
+                COLUMN_NECKLACE + " TEXT" +
+                ")";
+        db.execSQL(sqlTablePet);
+
     }
 
     @Override
@@ -88,7 +96,7 @@ public class dbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public void insertOwner(Owner owner) {
+    public void insertOwner(Owner owner, Context context) {
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -103,11 +111,14 @@ public class dbHelper extends SQLiteOpenHelper {
 
             db.insertOrThrow(TABLE_OWNER, null, values);
             db.setTransactionSuccessful();
+
+            Toast.makeText(context.getApplicationContext(), "Success",
+                    Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             e.printStackTrace();
-            Log.d(TAG, "Error while trying to add pet to database");
+            Toast.makeText(context.getApplicationContext(), "Error" + e.toString(),
+                    Toast.LENGTH_LONG).show();
         } finally {
-
             db.endTransaction();
         }
     }
